@@ -1,10 +1,20 @@
+import { StreakCard } from "@/components/common/StreakCard"
+import { CompletionRateCard } from "@/components/common/CompletionRateCard"
+import { TodaysProgressCard } from "@/components/common/TodaysProgressCard"
+import { FocusSection } from "@/components/common/FocusSection"
+
 export const Home = () => {
     return (
-        <div className="p-8">
-            <h1 className="text-3xl font-bold text-blue-600">Welcome to AiJournal</h1>
-            <p className="text-slate-500 mt-4">
-                Your professional Vite + React app is ready with Tailwind CSS.
-            </p>
+        <div className="space-y-8 p-1 pl-24">
+            {/* Stats Cards */}
+            <div className="grid gap-6 md:grid-cols-3">
+                <StreakCard />
+                <CompletionRateCard />
+                <TodaysProgressCard />
+            </div>
+
+            {/* Your Focus Section */}
+            <FocusSection />
         </div>
     )
 }
