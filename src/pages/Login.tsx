@@ -3,8 +3,9 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useNavigate } from "react-router-dom"
 import { ThemeProvider } from "@/components/theme-provider"
-import heroImageDark from "/root/.gemini/antigravity/brain/b030a323-b8f6-4732-b208-9a0376ccb34f/login_hero_navy_green_widgets_1767697805141.png"
-import heroImageLight from "/root/.gemini/antigravity/brain/b030a323-b8f6-4732-b208-9a0376ccb34f/login_hero_flat_vector_analytics_1767697257598.png"
+
+// Single universal asset
+const heroImage = "/assets/login-hero.png"
 
 function LoginContent() {
     const navigate = useNavigate()
@@ -76,17 +77,11 @@ function LoginContent() {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-white rounded-full blur-3xl opacity-40 dark:hidden"></div>
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#112240] rounded-full blur-3xl opacity-50 hidden dark:block"></div>
 
-                {/* Light Mode Image */}
+                {/* Universal Hero Image */}
                 <img
-                    src={heroImageLight}
-                    alt="Analytics Dashboard Light"
-                    className="h-full w-full object-contain p-20 relative z-10 block dark:hidden"
-                />
-                {/* Dark Mode Image */}
-                <img
-                    src={heroImageDark}
-                    alt="Connected Analytics Dark"
-                    className="h-full w-full object-contain p-20 relative z-10 hidden dark:block"
+                    src={heroImage}
+                    alt="Analytics Dashboard"
+                    className="h-full w-full object-contain p-20 relative z-10"
                 />
             </div>
         </div>
